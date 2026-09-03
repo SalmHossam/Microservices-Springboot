@@ -1,11 +1,15 @@
 package com.example.accounts_microservices.DTOs;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 
 @Data
+@RequiredArgsConstructor
+@AllArgsConstructor
 public class ErrorResponseDTO {
 
     private String apiPath;
