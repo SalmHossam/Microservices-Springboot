@@ -14,8 +14,19 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class GlobalException {
 
-    private final WebRequest webRequest;
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<?> handleGlobalException(Exception ex
+            ,WebRequest webRequest){
+
+        ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
+                webRequest.getDescription(false),
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                ex.getMessage(),
+                LocalDateTime.now()
+        );
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponseDTO);
+    }
     @ExceptionHandler(CustomerAlreadyExisitException.class)
     public ResponseEntity<?> handleCustomerAlreadyExistsException(CustomerAlreadyExisitException ex
     ,WebRequest webRequest){
