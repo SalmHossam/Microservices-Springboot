@@ -31,8 +31,7 @@ public class AccountsService implements  IAccountsService {
         if(findCustomer.isPresent()){
             throw new CustomerAlreadyExisitException("Customer already registered with this phone number");
         }
-        customer.setCreatedAt(LocalDateTime.now());
-        customer.setCreatedBy("anonymous");
+
         Customer savedCustomer=customerRepo.save(customer);
         accountRepo.save(createNewAccount(savedCustomer));
     }
@@ -66,9 +65,6 @@ public class AccountsService implements  IAccountsService {
 
             AccountMapper.mapToAccount(accountDTO, account);
 
-            account.setUpdatedAt(LocalDateTime.now());
-            account.setUpdatedBy("admin");
-
             accountRepo.save(account);
 
             Long customerId=account.getCustomerId();
@@ -77,8 +73,6 @@ public class AccountsService implements  IAccountsService {
             );
 
             CustomerMapper.mapToCustomer(customerDTO, customer);
-            customer.setUpdatedAt(LocalDateTime.now());
-            customer.setUpdatedBy("admin");
             customerRepo.save(customer);
             isUpdated=true;
         }
@@ -105,8 +99,6 @@ public class AccountsService implements  IAccountsService {
        account.setAccountNumber(accountNumber);
       account.setAccountType(AccountsConstants.ACCOUNT_TYPE);
       account.setBranchAddress(AccountsConstants.ADDRESS);
-      account.setCreatedAt(LocalDateTime.now());
-      account.setCreatedBy("anonymous");
 
       return account;
     }

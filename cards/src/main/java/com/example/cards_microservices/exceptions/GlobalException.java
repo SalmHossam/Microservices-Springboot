@@ -16,9 +16,9 @@ public class GlobalException {
 
     private final WebRequest webRequest;
 
-    @ExceptionHandler(CardAlreadyExisitException.class)
-    public ResponseEntity<?> handleCustomerAlreadyExistsException(CardAlreadyExisitException ex
-    ,WebRequest webRequest){
+    @ExceptionHandler(CardAlreadyExistException.class)
+    public ResponseEntity<?> CardAlreadyExistException(CardAlreadyExistException ex
+    , WebRequest webRequest){
 
         ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
                 webRequest.getDescription(false),
