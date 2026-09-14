@@ -1,4 +1,4 @@
-package com.example.loans-microservices;
+package com.example.loans_microservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LoansMicroservicesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LoanMicroservicesApplication.class, args);
+		SpringApplication.run(LoansMicroservicesApplication.class, args);
 	}
 
 

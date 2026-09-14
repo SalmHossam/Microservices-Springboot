@@ -1,4 +1,4 @@
-package com.example.loans-microservices.entity;
+package com.example.loans_microservices.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

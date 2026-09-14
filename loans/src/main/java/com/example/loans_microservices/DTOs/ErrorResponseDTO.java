@@ -1,4 +1,4 @@
-package com.example.loans-microservices.DTOs;
+package com.example.loans_microservices.DTOs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

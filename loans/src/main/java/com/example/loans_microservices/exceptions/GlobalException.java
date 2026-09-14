@@ -1,6 +1,6 @@
-package com.example.cards_microservices.exceptions;
+package com.example.loans_microservices.exceptions;
 
-import com.example.cards_microservices.DTOs.ErrorResponseDTO;
+import com.example.loans_microservices.DTOs.ErrorResponseDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +16,8 @@ public class GlobalException {
 
     private final WebRequest webRequest;
 
-    @ExceptionHandler(CardAlreadyExisitException.class)
-    public ResponseEntity<?> handleCustomerAlreadyExistsException(CardAlreadyExisitException ex
+    @ExceptionHandler(LoanAlreadyExisitException.class)
+    public ResponseEntity<?> handleCustomerAlreadyExistsException(LoanAlreadyExisitException ex
     ,WebRequest webRequest){
 
         ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
