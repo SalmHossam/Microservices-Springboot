@@ -1,4 +1,4 @@
-package com.example.accounts_microservices.exceptions;
+package com.example.loans_microservices.exceptions;
 
 
 import lombok.AllArgsConstructor;

@@ -17,7 +17,7 @@ public class GlobalException {
     private final WebRequest webRequest;
 
     @ExceptionHandler(LoanAlreadyExisitException.class)
-    public ResponseEntity<?> handleCustomerAlreadyExistsException(LoanAlreadyExisitException ex
+    public ResponseEntity<?> handleLoanAlreadyExistsException(LoanAlreadyExisitException ex
     ,WebRequest webRequest){
 
         ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
@@ -29,8 +29,8 @@ public class GlobalException {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponseDTO);
     }
 
-    @ExceptionHandler(com.example.accounts_microservices.exceptions.ResourceNotFoundException.class)
-    public ResponseEntity<?>handleResourceNotFoundException(com.example.accounts_microservices.exceptions.ResourceNotFoundException ex, WebRequest webRequest){
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<?>handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest webRequest){
         ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
                 webRequest.getDescription(false),
                 HttpStatus.NOT_FOUND,
